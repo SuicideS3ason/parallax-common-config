@@ -28,7 +28,7 @@ module.exports = {
 	output: {
 		filename: "bundle.min.js",
 		path: path.join(__dirname, "../../dist"),
-		publicPath: "/"
+		publicPath: ""
 	},
 	plugins: [
 		new webpack.EnvironmentPlugin({
