@@ -202,7 +202,7 @@
 			}
 		],
 		"@typescript-eslint/await-thenable": 2,
-		"@typescript-eslint/ban-ts-ignore": 2,
+		"@typescript-eslint/ban-ts-comment": 2,
 		"@typescript-eslint/ban-types": [
 			2,
 			{
@@ -229,13 +229,51 @@
 			{
 				"selector": "default",
 				"format": [
-					"camelCase"
-				]
+					"strictCamelCase"
+				],
+				"custom": {
+					"regex": "^id[A-Z]",
+					"match": false
+				}
+			},
+			{
+				"selector": "variable",
+				"types": ["boolean"],
+				"format": [
+					"StrictPascalCase"
+				],
+				"prefix": ["is", "should", "has", "can", "did", "will"]
+			},
+			{
+				"selector": "property",
+				"types": ["boolean"],
+				"format": [
+					"StrictPascalCase"
+				],
+				"prefix": ["is", "should", "has", "can", "did", "will"]
+			},
+			{
+				"selector": "parameterProperty",
+				"types": ["boolean"],
+				"format": [
+					"StrictPascalCase"
+				],
+				"prefix": ["is", "should", "has", "can", "did", "will"]
+			},
+			{
+				"selector": "variable",
+				"modifiers": ["const"],
+				"format": ["StrictPascalCase"],
+				"prefix": ["C"],
+				"filter": {
+					"regex": "^[A-Z]",
+					"match": true
+				}
 			},
 			{
 				"selector": "class",
 				"format": [
-					"PascalCase"
+					"StrictPascalCase"
 				]
 			},
 			{
@@ -244,21 +282,21 @@
 					"private"
 				],
 				"format": [
-					"camelCase"
+					"strictCamelCase"
 				],
 				"leadingUnderscore": "allow"
 			},
 			{
 				"selector": "memberLike",
 				"format": [
-					"camelCase"
+					"strictCamelCase"
 				],
 				"leadingUnderscore": "allow"
 			},
 			{
 				"selector": "typeAlias",
 				"format": [
-					"PascalCase"
+					"StrictPascalCase"
 				],
 				"prefix": [
 					"T"
@@ -267,13 +305,13 @@
 			{
 				"selector": "typeParameter",
 				"format": [
-					"PascalCase"
+					"StrictPascalCase"
 				]
 			},
 			{
 				"selector": "interface",
 				"format": [
-					"PascalCase"
+					"StrictPascalCase"
 				],
 				"prefix": [
 					"I"
@@ -282,7 +320,7 @@
 			{
 				"selector": "enum",
 				"format": [
-					"PascalCase"
+					"StrictPascalCase"
 				],
 				"prefix": [
 					"E"
